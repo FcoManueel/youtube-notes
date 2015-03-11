@@ -1,8 +1,11 @@
 YoutubeNotes::Application.routes.draw do
+  root to: 'landing#index' # don't remove to: or it breaks
+  #get "landing/index"
+
   resources :projects
-
-
   resources :tasks
+
+  
 
 
   # The priority is based upon order of creation:

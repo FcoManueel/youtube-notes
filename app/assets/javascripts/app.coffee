@@ -1,0 +1,2 @@
+ytnotes = angular.module('ytnotes',[
+])
