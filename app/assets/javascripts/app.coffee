@@ -1,2 +1,2 @@
-ytnotes = angular.module('ytnotes',[
+dashboardApp = angular.module('angularApp',[
 ])

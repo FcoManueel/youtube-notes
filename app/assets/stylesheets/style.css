@@ -1,0 +1,66 @@
+body {
+  padding-top: 50px;
+}
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  padding-top: 30px;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+li {
+  /*  TEMPORAL */
+}
+
+.startTime {}
+
+.endTime {
+  position: absolute;
+  bottom: 0px;
+}
+
+.timeContainer {
+  height: 100%;
+  position: relative;
+}
+
+.timeCell {
+  max-width: 3.6em;
+  text-align: center;
+  overflow: hidden;
+  height: 70px;
+}
+
+
+
+
+
+
+.noteTextContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.noteTextCell {
+
+}
+
+.table-responsive {
+  
+}
+
+.noteContent {
+  white-space: normal;
+}
