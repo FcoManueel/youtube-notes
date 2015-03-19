@@ -12,10 +12,7 @@ Awesome note taking tool for YouTube videos
 
 5. Add this entry to your **hosts** file (*/etc/hosts*)
 
-    192.168.56.102     ytnotes.devvagrant up
-vagrant ssh
-cd /var/www
-rails s
+    192.168.56.102     ytnotes.dev
 
 ### Start VM + Rails server
 0. Go to project directory
