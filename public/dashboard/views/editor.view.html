@@ -1,0 +1,89 @@
+<section class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+            <div class="video-container">
+                <youtube-video player="yt.player" player-vars="yt.vars" video-URL="yt.video"></youtube-video>
+            </div>
+        </div>
+        <div class="col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+            <tabset>
+                <tab heading="Notes" active="true">
+                    <div class="table-responsive">
+                        <textarea class="noteTextContainer" rows="2" ng-keydown="checkTime($event)" ng-model="note.content"></textarea>
+                        <table class="table table-striped">
+                            <thead ng-init="updateNotes()">
+                            <tr>
+                                <th>
+                                    Notes:
+                                </th>
+
+                            </tr>
+                            </thead>
+                            <!--                for each note on block, generate a row.-->
+                            <tbody>
+                            <tr ng-repeat="note in testMessages | orderBy:'-startTime'">
+                                <td class="col-xs-1 timeCell">
+                                    <div class="timeContainer">
+                                        <div class="startTime">[{{note.startTime}}]</div>
+                                        <div class="endTime">[{{note.endTime}}]</div>
+                                    </div>
+                                </td>
+                                <td class="noteTextCell" ng-dblclick="editItem(note)">
+                                    <div class="noteContent">
+                                        <pre contenteditable="{{note.editMode}}">{{note.content}}</pre>
+                                    </div>
+
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </tab>
+                <tab heading="Comments" disabled="false">
+                    <!--           COMMENTS CONTENTS     -->
+                </tab>
+            </tabset>
+        </div>
+    </div>
+</section>
+
+<!--
+  <div class="row">
+    <h2>Notes:</h2>
+
+    <div data-ng-controller="getNote">
+      <table class="notes-table">
+        <tr>
+          <td>
+            <div data-ng-controller="saveNote">
+              <textarea rows="2" data-ng-focus="getStartTime()" data-ng-keydown="getStartTime($event)" data-ng-trim=false data-ng-model="block"></textarea>
+              <button data-ng-click="saveNote()">Add random note</button>
+            </div>
+          </td>
+        </tr>
+        <tr class="animate-repeat" data-ng-repeat="block in note | orderBy:'-startTime'">
+          <td>
+            <hr>
+
+            <table>
+              <tr>
+                <td editable-text="block.startTime" class="notes-td top">
+                  {{block.startTime}}
+                </td>
+                <td rowspan="2" class="top block-td">
+                  <pre ekkk-rows="3" width="auto" editable-textarea="block.text">{{block.text}}</pre>
+                </td>
+              </tr>
+              <tr>
+                <td editable-text="block.endTime" class="notes-td bottom">
+                  {{block.endTime}}
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+
+      </table>
+    </div>
+  </div>
+-->
