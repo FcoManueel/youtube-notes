@@ -5,6 +5,8 @@ YoutubeNotes::Application.routes.draw do
 
   get "home/show"
 
+  # get "note/show"
+
   root to: 'landing#index' # don't remove to: or it breaks
   #get "landing/index"
 
@@ -16,8 +18,10 @@ YoutubeNotes::Application.routes.draw do
 
   resources :sessions, only: [:create, :destroy]
   resource :home, only: [:show]
+  resources :notes
 
-  root to: "home#show"
+
+  # root to: "home#show"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

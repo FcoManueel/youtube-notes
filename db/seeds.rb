@@ -5,3 +5,5 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+ # notes = Note.create([{startTime: '0:00', endTime: '1:00', content: 'some text here' }])

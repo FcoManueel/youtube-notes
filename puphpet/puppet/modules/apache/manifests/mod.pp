@@ -57,7 +57,7 @@ define apache::mod (
     $_package = undef
   }
   if $_package and ! defined(Package[$_package]) {
-    # note: FreeBSD/ports uses apxs tool to activate modules; apxs clutters
+    # notes: FreeBSD/ports uses apxs tool to activate modules; apxs clutters
     # httpd.conf with 'LoadModule' directives; here, by proper resource
     # ordering, we ensure that our version of httpd.conf is reverted after
     # the module gets installed.

@@ -23,7 +23,7 @@ Returns the number of elements in a string or array.
         # This will take care about positive and/or negative numbers
         # for both integer and floating-point values ...
         #
-        # Please note that Puppet has no notion of hexadecimal
+        # Please notes that Puppet has no notion of hexadecimal
         # nor octal numbers for its DSL at this point in time ...
         #
         Float(item)

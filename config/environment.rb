@@ -3,3 +3,6 @@ require File.expand_path('../application', __FILE__)
 
 # Initialize the rails application
 YoutubeNotes::Application.initialize!
+
+Rails.logger = Logger.new(STDOUT)
+Rails.logger = Logger::Logger.new("Application Log")

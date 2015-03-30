@@ -70,7 +70,7 @@ define monitor::url (
 
   if ($tool =~ /nagios/) {
     # Use for Example42 service checks
-    # (note: are used custom Nagios and nrpe commands)
+    # (notes: are used custom Nagios and nrpe commands)
     nagios::service { $name:
       ensure        => $ensure,
       template      => $real_template,

@@ -19,7 +19,7 @@
 
                             </tr>
                             </thead>
-                            <!--                for each note on block, generate a row.-->
+                            <!--                for each notes on block, generate a row.-->
                             <tbody>
                             <tr ng-repeat="note in testMessages | orderBy:'-startTime'">
                                 <td class="col-xs-1 timeCell">
@@ -28,9 +28,9 @@
                                         <div class="endTime">[{{note.endTime}}]</div>
                                     </div>
                                 </td>
-                                <td class="noteTextCell" ng-dblclick="editItem(note)">
+                                <td class="noteTextCell"  ng-dblclick="editItem(note)">
                                     <div class="noteContent">
-                                        <pre contenteditable="{{note.editMode}}">{{note.content}}</pre>
+                                        <pre ng-blur="saveEdit(note)" contenteditable="{{note.editMode}}">{{note.content}}</pre>
                                     </div>
 
                                 </td>
@@ -57,11 +57,11 @@
           <td>
             <div data-ng-controller="saveNote">
               <textarea rows="2" data-ng-focus="getStartTime()" data-ng-keydown="getStartTime($event)" data-ng-trim=false data-ng-model="block"></textarea>
-              <button data-ng-click="saveNote()">Add random note</button>
+              <button data-ng-click="saveNote()">Add random notes</button>
             </div>
           </td>
         </tr>
-        <tr class="animate-repeat" data-ng-repeat="block in note | orderBy:'-startTime'">
+        <tr class="animate-repeat" data-ng-repeat="block in notes | orderBy:'-startTime'">
           <td>
             <hr>
 

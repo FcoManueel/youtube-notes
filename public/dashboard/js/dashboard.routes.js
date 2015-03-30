@@ -5,14 +5,14 @@ angular.module('dashboardApp')
         templateUrl: 'dashboard/views/home.view.html',
         controller: 'dashboardCtrl'
       })
-      .when('/note', {
+      .when('/notes', {
         templateUrl: 'dashboard/views/editor.view.html',
         controller: 'editorCtrl'
       })
       .otherwise('/');
   }]).run(function ($rootScope, $window) {
       $rootScope.$on('$routeChangeSuccess', function () {
-        console.log("$routeChangeSuccess!");
+        //console.log("$routeChangeSuccess!");
         $window.scrollTo(0, 0);
       });
   });

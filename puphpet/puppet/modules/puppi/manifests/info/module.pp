@@ -6,7 +6,7 @@
 #
 # == Usage
 # (Sample from Example42 apache module where there's wide use of
-# qualified variables, note that you can provide direct values to it
+# qualified variables, notes that you can provide direct values to it
 # without using variables):
 #
 #  puppi::info::module { "apache":

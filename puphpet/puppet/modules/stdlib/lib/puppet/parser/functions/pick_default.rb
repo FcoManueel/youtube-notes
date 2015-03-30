@@ -13,7 +13,7 @@ following:
   $real_jenkins_version = pick_default($::jenkins_version, '1.449')
 
 The value of $real_jenkins_version will first look for a top-scope variable
-called 'jenkins_version' (note that parameters set in the Puppet Dashboard/
+called 'jenkins_version' (notes that parameters set in the Puppet Dashboard/
 Enterprise Console are brought into Puppet as top-scope variables), and,
 failing that, will use a default value of 1.449.
 

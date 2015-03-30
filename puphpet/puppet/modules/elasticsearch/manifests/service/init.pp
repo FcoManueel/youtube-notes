@@ -49,7 +49,7 @@ define elasticsearch::service::init{
         $service_enable = false
       }
       # unknown status
-      # note: don't forget to update the parameter check in init.pp if you
+      # notes: don't forget to update the parameter check in init.pp if you
       #       add a new or change an existing status.
       default: {
         fail("\"${elasticsearch::status}\" is an unknown service status value")

@@ -4,20 +4,38 @@ angular.module('dashboardApp') //Module's name.
     $scope.testMessages = [];
     $scope.note = {}; //this is for the child part of the ng-model. Just create an empty object for it no handle
 
-    $scope.yt = { //Test parameters.
-      video: 'https://www.youtube.com/watch?v=DfrwK-ravko',
-      player: null,
-      vars: {
-        controls: 2,
-        autohide: 1,
-        disablekb: 1
-      }
+
+
+    editorService.yt = { //Test parameters.
+        //video: 'https://www.youtube.com/watch?v=DfrwK-ravko',
+        player: null,
+        vars: {
+            controls: 2,
+            autohide: 1,
+            disablekb: 1
+        }
     };
 
+    $scope.yt = editorService.yt;
+
+    //call the service so it also edit it in the database
     $scope.editItem = function (item) {
+        //console.log(item);
+
       item.editMode = !item.editMode;
+
+    //editorService.edit(item);
     };
-    
+
+    $scope.saveEdit = function(note){
+        editorService.edit(note);
+    };
+
+    $scope.deleteNote = function(note)
+    {
+        editorService.remove(note);
+    };
+
     $scope.updateNotes = function () {
       $scope.testMessages = editorService.getAll();
     };
@@ -49,7 +67,7 @@ angular.module('dashboardApp') //Module's name.
 
     };
     $scope.saveNote = function(){
-        //validate if its a note
+        //validate if its a notes
         if($scope.note.content == null || $scope.note.content == '')
             return;
         block = {
@@ -58,7 +76,7 @@ angular.module('dashboardApp') //Module's name.
             "endTime": transformToReadableTimestamp($scope.yt.player.getCurrentTime()),
             "editMode":false
         };
-        //save the note in memory
+        //save the notes in memory
         editorService.add(block);
 
         //call a function to save in the DB
